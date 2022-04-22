@@ -7,6 +7,9 @@ var io = require('socket.io')(server);
 
 // middleware
 app.use(express.json());    // For decoding json data
+const routes = require('./routes');
+app.use('/routes', routes)
+
 var clients = {};
 
 io.on('connection', (socket) => {
